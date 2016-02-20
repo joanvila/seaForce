@@ -1,21 +1,31 @@
 #square {
     position: absolute;
-    background-image: url('doge.jpeg');
+    background-image: url('fish.png');
     background-size: 50px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
     z-index: 1;
 }
-/*#dogFood {
+#wallTop {
     position: absolute;
-    background-image: url('sausage.png');
-    background-size: 50px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    background-color: red;
+    height: 300px;
+    width: 70px;
+    top: 0;
+    right: 0;
     z-index: 0;
-}*/
+}
+
+#wallBottom {
+    position: absolute;
+    background-color: red;
+    height: 300px;
+    width: 70px;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
 
 #pointsContainer {
     font-size: 30px;

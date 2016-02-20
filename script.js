@@ -4,6 +4,8 @@ var previousFrame = null;
 // Setup Leap loop with frame callback function
 var controllerOptions = {enableGestures: true};
 
+var position = 0;
+
 // to use HMD mode:
 // controllerOptions.optimizeHMD = true;
 
@@ -18,7 +20,16 @@ Leap.loop(controllerOptions, function(frame) {
             y -= 350;
             x *= 2;
             y *= 2;
+            if (position >= window.innerWidth) {
+            	position = 0;
+            	var rand = getRandomArbitrary(50,window.innerHeight - 150);
+            	$("#wallBottom").css({height:rand});
+            	$("#wallTop").css({height:window.innerHeight - rand - 150});
+            }
+            else position += 10;
             $("#square").css({left:x,top:-y});
+            $("#wallTop").css({right:position});
+            $("#wallBottom").css({right:position});
         }
     }
 
