@@ -63,6 +63,7 @@ Leap.loop(controllerOptions, function(frame) {
         		$("#game").hide();
         		$("#endGame").show();
         		$("#finalPuntuation").text(points);
+                finished = true;
         	}
         }
 
@@ -75,6 +76,8 @@ Leap.loop(controllerOptions, function(frame) {
 
         if (check1 && check2) {
             if (!(lastTrueCheck > checkCounter - 30)) {
+                randomX = 5000;
+                randomY = 5000;
                 $("#dogFood").hide();
                 $("#square").animate({width:'75px', height: '75px', backgroundSize: '75px'}, 100, "linear", function() {
                     $("#square").animate({width:'50px', height: '50px', backgroundSize: '50px'}, 100, "linear");
