@@ -90,13 +90,19 @@ Leap.loop(controllerOptions, function(frame) {
             if (!(lastTrueCheck > checkCounter - 30)) {
                 randomX = 5000;
                 randomY = 5000;
-                $("#dogFood").hide();
+                if ($("#dogFood").is(":visible")) {
+	                $("#dogFood").hide();
+	                acceleration -= 4;
+                	if (acceleration <= 0) acceleration = 1;
+	            }
+	            else {
+	            	$("#seaStar").hide();
+	            	points += 1000;
+	            }
                 $("#square").animate({width:'75px', height: '75px', backgroundSize: '75px'}, 100, "linear", function() {
                     $("#square").animate({width:'50px', height: '50px', backgroundSize: '50px'}, 100, "linear");
                 });
-                lastTrueCheck = checkCounter;
-                acceleration -= 4;
-                if (acceleration <= 0) acceleration = 1;
+                lastTrueCheck = checkCounter;              
             }
         }
     }
@@ -119,8 +125,15 @@ function getRandomArbitrary(min, max) {
 }
 
 function renderFood(x, y) {
-    $("#dogFood").show();
-    $("#dogFood").css({left:x,top:-y});
+	var rnd = getRandom(1,3);
+	if (rnd == 1) {
+	    $("#dogFood").show();
+	    $("#dogFood").css({left:x,top:-y});		
+	}
+	else {
+	    $("#seaStar").show();
+	    $("#seaStar").css({left:x,top:-y});		
+	}
 }
 
 $(document).ready(function() {
@@ -135,5 +148,5 @@ $(document).ready(function() {
             randomY = getRandomArbitrary(-550, 30);
             renderFood(randomX, randomY);
         }
-    }, 20000);
+    }, 15000);
 });
