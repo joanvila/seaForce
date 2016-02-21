@@ -79,6 +79,7 @@ Leap.loop(controllerOptions, function(frame) {
                 });
                 lastTrueCheck = checkCounter;
                 acceleration -= 4;
+                if (acceleration <= 0) acceleration = 1;
             }
         }
     }

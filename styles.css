@@ -9,7 +9,9 @@
 }
 #wallTop {
     position: absolute;
-    background-color: red;
+    background-image: url('sharkReverse.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 0;
     width: 70px;
     top: 0;
@@ -19,7 +21,9 @@
 
 #wallBottom {
     position: absolute;
-    background-color: red;
+    background-image: url('shark.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 0;
     width: 70px;
     bottom: 0;
