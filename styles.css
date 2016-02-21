@@ -9,26 +9,30 @@
 }
 #wallTop {
     position: absolute;
-    background-image: url('sharkReverse.png');
+    background-image: url('wallTexture.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
     height: 0;
     width: 70px;
     top: 0;
     right: 0;
     z-index: 0;
+    opacity: 0.9;
 }
 
 #wallBottom {
     position: absolute;
-    background-image: url('shark.png');
+    background-image: url('wallTexture.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
     height: 0;
     width: 70px;
     bottom: 0;
     right: 0;
     z-index: 0;
+    opacity: 0.9;
 }
 
 #pointsDiv {

@@ -15,6 +15,7 @@ var lastTrueCheck = 0;
 var randomX = getRandomArbitrary(300, 1000);
 var randomY = getRandomArbitrary(-550, 30);
 
+var started = false;
 var finished = false;
 
 // to use HMD mode:
@@ -28,6 +29,7 @@ Leap.loop(controllerOptions, function(frame) {
     ++checkCounter;
     // Display Hand object data
     if (frame.hands.length > 0) {
+        started = true;
         if (!finished) {
             ++points;
             $("#points").text(points);
@@ -108,12 +110,15 @@ function renderFood(x, y) {
 
 $(document).ready(function() {
     window.setInterval(function(){
-    	acceleration += 1;
+        if (started && !finished)
+    	   acceleration += 1;
     }, 4000);
 
     window.setInterval(function(){
-        randomX = getRandomArbitrary(300, 1000);
-        randomY = getRandomArbitrary(-550, 30);
-        renderFood(randomX, randomY);
-    }, 15000);
+        if (started && !finished) {
+            randomX = getRandomArbitrary(300, 1000);
+            randomY = getRandomArbitrary(-550, 30);
+            renderFood(randomX, randomY);
+        }
+    }, 20000);
 });
