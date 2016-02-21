@@ -1,3 +1,11 @@
+#game {
+    display: none;
+}
+
+#presentation {
+    color: white;
+}
+
 #square {
     position: absolute;
     background-image: url('fish.png');

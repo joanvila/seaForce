@@ -29,7 +29,11 @@ Leap.loop(controllerOptions, function(frame) {
     ++checkCounter;
     // Display Hand object data
     if (frame.hands.length > 0) {
-        started = true;
+        if (!started) {
+            started = true;
+            $("#presentation").hide();
+            $("#game").show();
+        }
         if (!finished) {
             ++points;
             $("#points").text(points);

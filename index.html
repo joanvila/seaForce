@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>leRead</title>
+        <title>Sea Force</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
          <script src="http://js.leapmotion.com/leap-0.6.3.min.js"></script>
          <script src="script.js"></script>
@@ -10,7 +10,15 @@
     </head>
     <body background="background.jpg" style="background-repeat:no-repeat; background-size:cover; ">
 
-    	<div id="pointsDiv"><span class="pointsSpan">Puntuation: </span><span class="pointsSpan" id="points">0</span></div>
+    	<div id="pointsDiv"><span class="pointsSpan">Score: </span><span class="pointsSpan" id="points">0</span></div>
+
+        <div id="presentation">
+            <div id="title" class="text-center">
+                <h1>Hi buddy!</h1>
+                <h3>Place your hand over the LEAP motion to save Dori</h3>
+            </div>
+        </div>
+
         <div id="game">
             <div id="square"></div>
             <div id="dogFood"></div>
@@ -19,7 +27,7 @@
         </div>
         <div id="endGame">
         	<h1>You killed Dori!!!</h1>
-        	<h3>Final puntuation: <span id="finalPuntuation">0</span></h3>
+        	<h3>Final score: <span id="finalPuntuation">0</span></h3>
         	<button id="retryButton" class="btn btn-success" onClick="window.location.reload();">Retry</button>
         </div>
 
