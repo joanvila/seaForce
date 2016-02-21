@@ -39,6 +39,7 @@ Leap.loop(controllerOptions, function(frame) {
             $("#points").text(points);
         }
         var hand = frame.hands[0];
+        var rotation = Math.floor(hand.palmNormal[0]*50);
         var x = hand.palmPosition[0];
         var y = hand.palmPosition[1];
         var rand = getRandomArbitrary(50,window.innerHeight - 150);
@@ -55,6 +56,13 @@ Leap.loop(controllerOptions, function(frame) {
         $("#square").css({left:x,top:-y});
         $("#wallTop").css({right:position});
         $("#wallBottom").css({right:position});
+
+        rotation = -rotation;
+        $("#square").css({'-webkit-transform' : 'rotate('+ rotation +'deg)',
+                     '-moz-transform' : 'rotate('+ rotation +'deg)',
+                     '-ms-transform' : 'rotate('+ rotation +'deg)',
+                     'transform' : 'rotate('+ rotation +'deg)'});
+
         var leftWall  = window.innerWidth - position-70;
         var rightWall = window.innerWidth - position;
         var topWall  = parseInt($("#wallBottom").offset().top) - 150;
