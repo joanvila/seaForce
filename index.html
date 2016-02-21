@@ -10,14 +10,16 @@
     </head>
     <body style="background-color: #333;">
 
+    	<div id="pointsDiv"><span class="pointsSpan">Puntuation: </span><span class="pointsSpan" id="points">0</span></div>
         <div id="game">
             <div id="square"></div>
             <div id="wallTop"></div>
             <div id="wallBottom"></div>
-            <div id="pointsContainer">
-                <span id="pointsTitle">Points: </span>
-                <span id="points">0</span>
-            </div>
+        </div>
+        <div id="endGame">
+        	<h1>You killed Dori!!!</h1>
+        	<h3>Final puntuation: <span id="finalPuntuation">0</span></h3>
+        	<button id="retryButton" class="btn btn-success" onClick="window.location.reload();">Retry</button>
         </div>
 
         <!-- Latest compiled and minified CSS -->
