@@ -44,5 +44,15 @@
 
 #retryButton {
 	margin-top: 30px;
+}
 
+#dogFood {
+    display: none;
+    position: absolute;
+    background-image: url('tortoise.png');
+    background-size: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    z-index: 0;
 }
